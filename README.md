@@ -1,4 +1,4 @@
-# Brief-Ecom-NodeJs by Sara El Hamel and Hanabe Kaaba
+# Brief-Ecom-NodeJs by Sara El Hamel and Hanane Kaaba
 
 instructions to use gestion app:
 
