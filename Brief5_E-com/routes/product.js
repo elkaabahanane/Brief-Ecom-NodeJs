@@ -1,12 +1,18 @@
-const router = express.router();
-const ejs = require("ejs");
-const bodyParser = require("body-parser");
+const express = require("express");
+const router = express.Router();
+const connection = require("../utils/connection");
 
-router.post("/product", function (req, res, next) {
-  let data = req.body;
-  let product = {
-    product_name: data.product_name,
-    price: data.price,
-    id_category: data.id_category,
+router.post("/add-product", async function (req, res, next) {
+  const data = req.body;
+  const product = {
+    product_name: data.name,
+    price: Number(data.price),
+    category: data.category,
   };
+
+  await connection.promise().query("INSERT INTO product SET ?", product);
+
+  res.redirect("/");
 });
+
+module.exports = router;
