@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>category</title> 
+</head>
+<body>
+  <h1>category Table</h1>
+  <% category.forEach(function(row){ %>
+    <table >
+      <tr>
+        <th>ID</th>
+        <th>category name</th>
+        <th>action</th>
+      </tr>
+      <tr>
+        <th><%= row.id_category %></th>
+        <th><%= row.name_category %></th>
+        <td><button class="btn btn-success mt-1" ><a href="/updatecateg.ejs">Update</a></button>
+        <td><button class="btn btn-danger mt-1"><a href="">Delete</a></button></td>
+    </td>
+      </tr>
+    </table>
+  <% }); %>
+</body>
+</html>

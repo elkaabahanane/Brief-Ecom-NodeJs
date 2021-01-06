@@ -1,0 +1,23 @@
+{
+  "name": "brief5_e-com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cjs-module": "^1.5.0",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "flash": "^1.1.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
