@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        td,
+        th {
+            border: 1px solid black;
+            padding: 5px
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Products</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Action</th>
+            </tr>
+            <% for(var i=0; i < products.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= products[i].id_product %>
+                    </td>
+                    <td>
+                        <%= products[i].product_name %>
+                    </td>
+                    <td>
+                        <%= products[i].price %>
+                    </td>
+                    <td>
+                        <%= products[i].name_category %>
+                    </td>
+                    <td>
+                        <a href="#">Edit</a>
+                        <a href="#">Delete</a>
+                    </td>
+                </tr>
+                <% } %>
+        </table>
+
+        <h1>Categories</h1>
+        <table>
+            <tr>
+                <th>Category ID</th>
+                <th>Category Name</th>
+            </tr>
+            <% for(var i=0; i < categories.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= categories[i].id_category %>
+                    </td>
+                    <td>
+                        <%= categories[i].name_category %>
+                    </td>
+                </tr>
+                <% } %>
+        </table>
+    </div>
+</body>
+
+</html>
