@@ -2,12 +2,16 @@ const connection = require("./utils/connection");
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const path = require("path");
 
 const productRouter = require("./routes/product");
 const categoryRouter = require("./routes/category");
 
 //Set view engine
+app.use(express.static(__dirname + "/public"));
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

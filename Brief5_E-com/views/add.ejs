@@ -5,28 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insertion</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-    <h1>Add Category</h1>
-    <form method="POST" action="/add-category">
-        <input type="text" name="name" placeholder="Category Name">
-        <input type="submit" value="Add">
-    </form>
+    <div class="container">
+        <h1>Add Category</h1>
+        <form method="POST" action="/add-category">
+            <input type="text" name="name" placeholder="Category Name">
+            <input type="submit" value="Add">
+        </form>
 
-    <h1>Add Product</h1>
-    <form method="POST" action="/add-product">
-        <input type="text" name="name" placeholder="Product Name">
-        <input type="text" name="price" placeholder="Product Price">
-        <select name="category">
-            <% for(var i=0; i < categories.length; i++) { %>
-                <option value="<%= categories[i].id_category %>">
-                    <%= categories[i].name_category %>
-                </option>
-                <% } %>
-        </select>
-        <input type="submit" value="Add">
-    </form>
+        <h1>Add Product</h1>
+        <form method="POST" action="/add-product">
+            <input type="text" name="name" placeholder="Product Name">
+            <input type="text" name="price" placeholder="Product Price">
+            <select name="category">
+                <% for(var i=0; i < categories.length; i++) { %>
+                    <option value="<%= categories[i].id_category %>">
+                        <%= categories[i].name_category %>
+                    </option>
+                    <% } %>
+            </select>
+            <input type="submit" value="Add">
+        </form>
+    </div>
 </body>
 
 </html>
