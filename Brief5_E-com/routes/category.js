@@ -23,4 +23,30 @@ router.delete("/delete-category", async function (req, res) {
   res.send("Done");
 });
 
+router.get("/category-update/:id", async function (req, res) {
+  const id_category = req.params.id;
+  const [categories] = await connection
+    .promise()
+    .query("SELECT * from category where id_category = ?", id_category);
+
+  res.render("category-update", { category: categories[0] });
+});
+
+router.post("/category-update", async function (req, res) {
+  const data = req.body;
+  const category = {
+    id_category: Number(data.id),
+    name_category: data.name,
+  };
+
+  await connection
+    .promise()
+    .query("UPDATE category SET name_category = ? WHERE id_category = ?", [
+      category.name_category,
+      category.id_category,
+    ]);
+
+  res.redirect("/");
+});
+
 module.exports = router;

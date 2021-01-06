@@ -40,7 +40,7 @@
                         <%= products[i].name_category %>
                     </td>
                     <td>
-                        <a href="#">Edit</a>
+                        <a href="/product-update/<%= products[i].id_product %>">Edit</a>
                         <a href="#" class="delete-product" data-id="<%= products[i].id_product %>">Delete</a>
                     </td>
                 </tr>
@@ -62,7 +62,7 @@
                         <%= categories[i].name_category %>
                     </td>
                     <td>
-                        <a href="#">Edit</a>
+                        <a href="/category-update/<%= categories[i].id_category %>">Edit</a>
                         <a href="#" class="delete-category" data-id="<%= categories[i].id_category %>">Delete</a>
                     </td>
                 </tr>
@@ -78,7 +78,8 @@
             const btn = productBtns[i];
             const id_product = btn.getAttribute("data-id");
 
-            btn.addEventListener('click', function () {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault()
                 fetch("/delete-product", {
                     method: "DELETE",
                     headers: {
@@ -95,7 +96,8 @@
             const btn = categoryBtns[i];
             const id_category = btn.getAttribute("data-id");
 
-            btn.addEventListener('click', function () {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault()
                 fetch("/delete-category", {
                     method: "DELETE",
                     headers: {

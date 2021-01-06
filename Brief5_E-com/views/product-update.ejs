@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Update</title>
+</head>
+
+<body>
+    <h1>Update Product</h1>
+    <form method="POST" action="/product-update">
+        <input type="text" name="id" value="<%= product.id_product %>">
+        <input type="text" name="name" value="<%= product.product_name %>">
+        <input type="text" name="price" value="<%= product.price %>">
+        <select name="category">
+            <% for(var i=0; i < categories.length; i++) { var selected=categories[i].id_category==product.category
+                ? 'selected' : '' %>
+                <option value="<%= categories[i].id_category %>" <%=selected %>>
+                    <%= categories[i].name_category %>
+                </option>
+                <% } %>
+        </select>
+        <input type="submit" value="Update">
+    </form>
+</body>
+
+</html>
